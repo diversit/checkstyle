@@ -2,6 +2,7 @@
 package com.puppycrawl.tools.checkstyle.grammar.java21;
 
 import java.util.List;
+import static java.lang.StringTemplate.RAW;
 
 public class InputStringTemplateBasic {
     int x = 10;
@@ -51,6 +52,16 @@ public class InputStringTemplateBasic {
 
     String name = "world";
     String s = STR."Hello, \{ name }!";
+
+    // multiline string template
+    String result11 = STR."""
+            Hello \{name}
+            """;
+
+    // raw string template
+    String result12 = RAW."""
+            Hello \{name}
+            """;
 
     private static String y(String y) {
         return "y";
